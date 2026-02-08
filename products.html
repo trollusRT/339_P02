@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Colour Quest Studio — Products template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="img/mascot.png" />
+
+    <!-- heading font (falls back to system-ui if blocked) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;650;750&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+    <style>
+        :root {
+            /* Dark-mode grayscale system */
+            --bg-main: #0b0b0b;
+            --bg-surface: #111111;
+            --bg-elevated: #161616;
+            --text-primary: #e2e2e2;
+            --text-muted: #9a9a9a;
+            --text-faint: #6f6f6f;
+            --line-subtle: #252525;
+            --line-strong: #3a3a3a;
+            /* Minimal, functional interaction highlight */
+            --accent: #d6d6d6;
+            --accent-hover: #ffffff;
+            --radius: 14px;
+            --shadow: 0 18px 45px rgba(0,0,0,.42);
+            --font-body: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            --font-head: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            --max: 78ch;
+            --s1: .5rem;
+            --s2: 1rem;
+            --s3: 1.5rem;
+            --s4: 2.25rem;
+            --s5: 3rem;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: radial-gradient(1000px 600px at 50% 0%, rgba(255,255,255,.03), transparent 55%), var(--bg-main);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.55;
+        }
+
+        /* Page frame */
+        .wrap {
+            width: min(calc(100vw - 2rem), 1100px);
+            margin: 0 auto;
+            padding: var(--s4) 0 var(--s5);
+        }
+
+        header.site {
+            display: grid;
+            gap: .35rem;
+            padding-bottom: var(--s3);
+            border-bottom: 1px solid var(--line-subtle);
+            margin-bottom: var(--s3);
+        }
+
+        .kicker {
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: .14em;
+            font-size: .78rem;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: var(--font-head);
+            line-height: 1.18;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            letter-spacing: .01em;
+        }
+
+        .sub {
+            color: var(--text-muted);
+            margin-top: .35rem;
+            max-width: var(--max);
+        }
+
+        /* Navigation bar molecule */
+        nav.toc {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            backdrop-filter: blur(10px);
+            background: rgba(11,11,11,.75);
+            border-bottom: 1px solid var(--line-subtle);
+        }
+
+            nav.toc .inner {
+                width: min(calc(100vw - 2rem), 1100px);
+                margin: 0 auto;
+                display: flex;
+                gap: .75rem;
+                align-items: center;
+                padding: .75rem 0;
+                overflow-x: auto;
+            }
+
+            nav.toc a {
+                color: var(--text-muted);
+                text-decoration: none;
+                border: 1px solid transparent;
+                padding: .45rem .75rem;
+                border-radius: 999px;
+                white-space: nowrap;
+            }
+
+                nav.toc a:hover {
+                    color: var(--accent-hover);
+                    border-color: var(--line-strong);
+                    background: rgba(255,255,255,.03);
+                }
+
+                nav.toc a:focus-visible {
+                    outline: 2px solid var(--accent-hover);
+                    outline-offset: 2px;
+                }
+
+        /* Sections */
+        section.block {
+            margin-top: var(--s5);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 1rem;
+            padding-bottom: var(--s2);
+            border-bottom: 1px solid var(--line-subtle);
+            margin-bottom: var(--s3);
+        }
+
+            .section-title p {
+                margin: 0;
+                color: var(--text-faint);
+                font-size: .9rem;
+                max-width: 56ch;
+            }
+
+        .card {
+            background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0)), var(--bg-surface);
+            border: 1px solid var(--line-subtle);
+            border-radius: var(--radius);
+            padding: var(--s3);
+            box-shadow: var(--shadow);
+        }
+
+        .grid {
+            display: grid;
+            gap: var(--s2);
+        }
+
+        @media (min-width: 860px) {
+            .grid.two {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .grid.three {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Links & buttons (atoms) */
+        a.inline {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--line-strong);
+            padding-bottom: .08em;
+        }
+
+            a.inline:hover {
+                color: var(--accent-hover);
+                border-bottom-color: var(--accent-hover);
+            }
+
+            a.inline:focus-visible {
+                outline: 2px solid var(--accent-hover);
+                outline-offset: 3px;
+                border-bottom-color: transparent;
+            }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .5rem;
+            padding: .7rem 1rem;
+            border-radius: 999px;
+            border: 1px solid var(--line-strong);
+            background: rgba(255,255,255,.02);
+            color: var(--text-primary);
+            text-decoration: none;
+            cursor: pointer;
+            font-family: var(--font-head);
+            font-weight: 600;
+            letter-spacing: .01em;
+        }
+
+            .btn:hover {
+                border-color: var(--accent-hover);
+                background: rgba(255,255,255,.05);
+            }
+
+            .btn:focus-visible {
+                outline: 2px solid var(--accent-hover);
+                outline-offset: 3px;
+            }
+
+            .btn.primary {
+                background: var(--accent);
+                color: #0b0b0b;
+                border-color: var(--accent);
+            }
+
+                .btn.primary:hover {
+                    filter: brightness(1.04);
+                    border-color: var(--accent-hover);
+                }
+
+        /* Form controls (atoms) */
+        label {
+            display: block;
+            margin: 0 0 .35rem;
+            color: var(--text-muted);
+            font-size: .9rem;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: .75rem .85rem;
+            border-radius: 12px;
+            border: 1px solid var(--line-subtle);
+            background: #0d0d0d;
+            color: var(--text-primary);
+            font-family: var(--font-body);
+        }
+
+            input::placeholder {
+                color: #666;
+            }
+
+            input:focus-visible, select:focus-visible, textarea:focus-visible {
+                outline: 2px solid var(--accent-hover);
+                outline-offset: 2px;
+                border-color: transparent;
+            }
+
+        fieldset {
+            border: 1px solid var(--line-subtle);
+            border-radius: var(--radius);
+            padding: var(--s2) var(--s2) var(--s3);
+        }
+
+        legend {
+            padding: 0 .5rem;
+            color: var(--text-muted);
+            font-family: var(--font-head);
+            font-size: .95rem;
+        }
+
+        .help {
+            margin-top: .4rem;
+            color: var(--text-faint);
+            font-size: .85rem;
+        }
+
+        /* Code blocks */
+        pre {
+            margin: var(--s2) 0 0;
+            padding: 1rem;
+            background: #0d0d0d;
+            border: 1px solid var(--line-subtle);
+            border-radius: 12px;
+            overflow: auto;
+        }
+
+        code {
+            font-family: var(--font-body);
+            font-size: .9rem;
+            color: #d6d6d6;
+        }
+
+        /* Swatches (atoms) */
+        .swatch {
+            border: 1px solid var(--line-subtle);
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: #0d0d0d;
+        }
+
+            .swatch .chip {
+                height: 72px;
+            }
+
+            .swatch .meta {
+                padding: .8rem .9rem;
+                display: flex;
+                justify-content: space-between;
+                gap: .75rem;
+                color: var(--text-muted);
+                font-size: .85rem;
+            }
+
+                .swatch .meta strong {
+                    color: var(--text-primary);
+                    font-weight: 600;
+                    font-family: var(--font-head);
+                }
+
+        /* Project card (molecule example) */
+        .project {
+            display: grid;
+            gap: .9rem;
+            align-content: start;
+        }
+
+            .project img {
+                width: 100%;
+                height: 210px;
+                object-fit: cover;
+                border-radius: 12px;
+                border: 1px solid var(--line-subtle);
+                background: #0d0d0d;
+            }
+
+            .project h5 {
+                font-size: 1.05rem;
+                margin-top: .15rem;
+            }
+
+        .meta-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            color: var(--text-muted);
+            font-size: .9rem;
+        }
+
+        /* This is for the template for the brand assembly preview */
+        .preview {
+            border-radius: calc(var(--radius) + 4px);
+            border: 1px solid var(--line-strong);
+            overflow: hidden;
+            background: #0b0b0b;
+        }
+
+            .preview .top {
+                padding: 1.15rem 1.25rem;
+                border-bottom: 1px solid var(--line-subtle);
+                background: rgba(255,255,255,.02);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+        .brandmark {
+            display: flex;
+            align-items: center;
+            gap: .9rem;
+        }
+
+            .brandmark img {
+                width: 42px;
+                height: 42px;
+                border-radius: 12px;
+                border: 1px solid var(--line-subtle);
+                background: #0d0d0d;
+            }
+
+            .brandmark .name {
+                font-family: var(--font-head);
+                font-weight: 800;
+                letter-spacing: .01em;
+            }
+
+        .preview .content {
+            padding: 1.25rem;
+            display: grid;
+            gap: 1rem;
+        }
+
+            .preview .content p {
+                margin: 0;
+                color: var(--text-muted);
+                max-width: 70ch;
+            }
+
+        /* Issues with textbox overflow while styling this so this should fix it */
+        /* NOTE TO SELF - IT WORKS DO! NOT! TOUCH! THIS!!!! OR EVERYTHING IS RUINED AND TEXT BOXES BLEED OUT - */
+        /* Credits to https://www.bing.com/ck/a?!&&p=48c99e9af4d6f95b6acd23b117d5abd40e61494d1a24c9ad43a7ae4a68520afbJmltdHM9MTc2OTI5OTIwMA&ptn=3&ver=2&hsh=4&fclid=03620bfa-0e42-62cf-1ccd-191f0ffb63a4&psq=css+min-width&u=a1aHR0cHM6Ly9kZXZlbG9wZXIubW96aWxsYS5vcmcvZW4tVVMvZG9jcy9XZWIvQ1NTL1JlZmVyZW5jZS9Qcm9wZXJ0aWVzL21pbi13aWR0aA&ntb=1 */
+        .grid > * {
+            min-width: 0;
+        }
+
+
+        footer {
+            margin-top: var(--s5);
+            color: var(--text-faint);
+            font-size: .9rem;
+            border-top: 1px solid var(--line-subtle);
+            padding-top: var(--s3);
+        }
+
+            footer a {
+                color: var(--text-muted);
+            }
+
+                footer a:hover {
+                    color: var(--accent-hover);
+                }
+    </style>
+</head>
+
+<body>
+  <nav class="toc" aria-label="Site navigation"><div class="inner">
+      <a href="index.html">Style guide</a>
+      <a href="products.html" aria-current="page">Products page</a>
+      <a href="checkout.html">Checkout page</a>
+    </div></nav>
+  <div class="wrap">
+    <header class="site">
+      <div class="kicker">P01 — Final // Template</div>
+      <h1>Product or service listing</h1>
+      <p class="sub">Listing page for the products this studio creates.</p>
+    </header>
+
+    <section class="block" id="listing">
+      <div class="section-title">
+        <h2>Listing</h2>
+        <p>Cards scale from three columns to two to one depending on available space.</p>
+      </div>
+
+      <div class="grid two">
+        <aside class="card" aria-label="Filters">
+          <h3 class="kicker" style="margin:0 0 .75rem; font-family:var(--font-head); color:var(--text-muted);">Filters</h3>
+
+          <div class="grid" style="gap:.9rem;">
+            <div>
+              <label for="q">Search</label>
+              <input id="q" type="text" placeholder="Search projects..." />
+              <div class="help">Example filter control.</div>
+            </div>
+
+            <div>
+              <label>Type</label>
+              <div class="help" style="margin-top:0;">
+                <div style="display:grid; gap:.35rem; margin-top:.35rem;">
+                  <label style="display:flex; gap:.6rem; align-items:center; margin:0;">
+                    <input type="checkbox" checked style="width:auto; margin:0;"> Web Story
+                  </label>
+                  <label style="display:flex; gap:.6rem; align-items:center; margin:0;">
+                    <input type="checkbox" checked style="width:auto; margin:0;"> Game
+                  </label>
+                  <label style="display:flex; gap:.6rem; align-items:center; margin:0;">
+                    <input type="checkbox" style="width:auto; margin:0;"> E‑Novel
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label for="sort">Sort</label>
+              <select id="sort">
+                <option>Featured</option>
+                <option>Newest</option>
+                <option>Price: Low to High</option>
+                <option>Price: High to Low</option>
+              </select>
+            </div>
+
+            <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.25rem;">
+              <a class="btn primary" href="checkout.html">Go to checkout</a>
+              <a class="btn" href="index.html#templates">Back to templates</a>
+            </div>
+          </div>
+        </aside>
+
+        <div class="card" aria-label="Products">
+          <h3 class="kicker" style="margin:0 0 .75rem; font-family:var(--font-head); color:var(--text-muted);">Projects</h3>
+
+          <div class="grid three" aria-label="Project listing grid">
+            <article class="project">
+              <img src="img/project-blacksite.jpeg" alt="Blacksite Web Story key art">
+              <h5>Blacksite Web Story</h5>
+              <div class="meta-row"><span>Type: Web Story</span><span>Price: Pay what you want</span></div>
+              <p style="margin:0;"><a class="inline" href="#detail">View details</a></p>
+            </article>
+
+            <article class="project">
+              <img src="img/project-creative-freedom.jpeg" alt="Creative Freedom key art">
+              <h5>Creative Freedom</h5>
+              <div class="meta-row"><span>Type: Game</span><span>Price: $19.99 (pre‑order)</span></div>
+              <p style="margin:0;"><a class="inline" href="#detail">View details</a></p>
+            </article>
+
+            <article class="project">
+              <img src="img/project-world-to-fantasy.jpeg" alt="World to Fantasy Web Story key art">
+              <h5>World to Fantasy Web Story</h5>
+              <div class="meta-row"><span>Type: Web Story</span><span>Price: Pay what you want</span></div>
+              <p style="margin:0;"><a class="inline" href="#detail">View details</a></p>
+            </article>
+
+            <article class="project">
+              <img src="img/artbook-creative-freedom.jpg" alt="Creative Freedom key art (alternate)">
+              <h5>Creative Freedom — OST</h5>
+              <div class="meta-row"><span>Type: Digital Soundtrack</span><span>Price: $7.99</span></div>
+              <p style="margin:0;"><a class="inline" href="#detail">View details</a></p>
+            </article>
+
+            <article class="project">
+              <img src="img/artbook-blacksite.jpg" alt="Blacksite Web Story key art (alternate)">
+              <h5>Blacksite — Chapter Pack</h5>
+              <div class="meta-row"><span>Type: Bundle</span><span>Price: $9.99</span></div>
+              <p style="margin:0;"><a class="inline" href="#detail">View details</a></p>
+            </article>
+
+            <article class="project">
+              <img src="img/artbook-world-to-fantasy.jpg" alt="World to Fantasy Web Story key art (alternate)">
+              <h5>World to Fantasy — Artbook</h5>
+              <div class="meta-row"><span>Type: PDF</span><span>Price: $4.99</span></div>
+              <p style="margin:0;"><a class="inline" href="#detail">View details</a></p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div id="detail" class="card" style="margin-top:var(--s2);">
+        <h3 class="kicker" style="margin:0 0 .75rem; font-family:var(--font-head); color:var(--text-muted);">Detail panel</h3>
+        <h4 style="margin:0 0 .5rem;">Creative Freedom</h4>
+        <p class="sub" style="margin:0 0 1rem;">
+          Hardcoded in, clicking View details on this page could bring up a stretched panel giving a lot more detailed look into each product, but I couldn't figure out how to code that. I think it needs JavaScript and I haven't learned how to do that yet.'
+        </p>
+        <div style="display:flex; gap:.75rem; flex-wrap:wrap;">
+          <a class="btn primary" href="checkout.html">Add to cart</a>
+          <a class="btn" href="#listing">Back to listing</a>
+        </div>
+      </div>
+    </section>
+
+    <footer id="references">
+      <p style="margin:0 0 .5rem; font-family:var(--font-head); font-weight:800;">References & citations</p>
+
+      <p class="help" style="margin:.25rem 0 1rem;">
+        Original work: All project images and the mascot image used in these templates are my own artwork.
+      </p>
+
+      <p style="margin:0 0 .35rem; font-family:var(--font-head); font-weight:800;">Fonts</p>
+      <ul style="margin:.25rem 0 0; color:var(--text-muted);">
+        <li>Google Fonts. (n.d.). <em>Inter</em>. <a class="inline" href="https://fonts.google.com/specimen/Inter">https://fonts.google.com/specimen/Inter</a></li>
+        <li>Google Fonts. (n.d.). <em>Roboto Mono</em>. <a class="inline" href="https://fonts.google.com/specimen/Roboto+Mono">https://fonts.google.com/specimen/Roboto+Mono</a></li>
+      </ul>
+    </footer>
+  </div>
+</body>
+</html>
