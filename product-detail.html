@@ -428,143 +428,129 @@
                 footer a:hover {
                     color: var(--accent-hover);
                 }
-    </style>
+    
+    /* Product detail specifics (kept minimal) */
+    .hero-img{
+      width:100%;
+      max-height: 420px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background:#0d0d0d;
+      display:block;
+    }
+    .specs{
+      display:grid;
+      gap:.6rem;
+    }
+    .specs .row{
+      display:flex;
+      justify-content: space-between;
+      gap:1rem;
+      padding:.55rem .75rem;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#0d0d0d;
+      color: var(--text);
+    }
+    .specs .row span:first-child{ color: var(--text-muted); }
+
+  </style>
 </head>
 
 <body>
   <nav class="toc" aria-label="Site navigation"><div class="inner">
       <a href="index.html">Style guide</a>
-      <a href="products.html" aria-current="page">Products page</a>
-      <a href="product-detail.html">Product detail</a>
+      <a href="products.html">Products page</a>
+      <a href="product-detail.html" aria-current="page">Product detail</a>
       <a href="checkout.html">Checkout page</a>
     </div></nav>
   <div class="wrap">
     <header class="site">
-      <div class="kicker">P01 — Final // Template</div>
-      <h1>Product or service listing</h1>
-      <p class="sub">Listing page for the products this studio creates.</p>
+      <div class="kicker">Template page</div>
+      <h1>Product Detail</h1>
+      <p class="sub">
+        Dedicated deep‑dive page for a single product or service. This template is intended to be duplicated for multiple products (e.g., two detailed views).
+      </p>
     </header>
 
-    <section class="block" id="listing">
-      <div class="section-title">
-        <h2>Listing</h2>
-        <p>Cards scale from three columns to two to one depending on available space.</p>
-      </div>
-
+    <section class="block">
       <div class="grid two">
-        <aside class="card" aria-label="Filters">
-          <h3 class="kicker" style="margin:0 0 .75rem; font-family:var(--font-head); color:var(--text-muted);">Filters</h3>
+        <div class="card">
+          <img class="hero-img" src="img/product-hero.jpg" alt="Product hero image (placeholder)">
+          <h2 style="margin:1rem 0 .25rem;">Blacksite Web Story</h2>
+          <p class="sub" style="margin:0 0 1rem;">A transcript-style web novel with optional hidden annotations for curious readers.</p>
 
-          <div class="grid" style="gap:.9rem;">
-            <div>
-              <label for="q">Search</label>
-              <input id="q" type="text" placeholder="Search projects..." />
-              <div class="help">Example filter control.</div>
-            </div>
+          <div class="meta-row" style="margin:0 0 1rem;">
+            <span>Type: Web novel</span>
+            <span>Release: Ongoing</span>
+          </div>
 
-            <div>
-              <label>Type</label>
-              <div class="help" style="margin-top:0;">
-                <div style="display:grid; gap:.35rem; margin-top:.35rem;">
-                  <label style="display:flex; gap:.6rem; align-items:center; margin:0;">
-                    <input type="checkbox" checked style="width:auto; margin:0;"> Web Story
-                  </label>
-                  <label style="display:flex; gap:.6rem; align-items:center; margin:0;">
-                    <input type="checkbox" checked style="width:auto; margin:0;"> Game
-                  </label>
-                  <label style="display:flex; gap:.6rem; align-items:center; margin:0;">
-                    <input type="checkbox" style="width:auto; margin:0;"> E‑Novel
-                  </label>
-                </div>
-              </div>
-            </div>
+          <p style="margin:0 0 1rem;">
+            Gargoyle, designated Agent 14 is a crafty, mute operative, designated by her superior to increase rapport between her top-secret magical weapons facility and a foreign government. Her operation is thrown to the wayside when her
+              superior and The Blacksite itself are exposed and dismantled. Her quest to rescue her arrested boss has her resort to all sorts of foul play, and even finding out secrets of the land that are so much bigger than any other party.
+          </p>
 
-            <div>
-              <label for="sort">Sort</label>
-              <select id="sort">
-                <option>Featured</option>
-                <option>Newest</option>
-                <option>Price: Low to High</option>
-                <option>Price: High to Low</option>
-              </select>
-            </div>
+          <div class="row" style="display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1rem;">
+            <a class="btn primary" href="checkout.html">Buy now</a>
+            <a class="btn" href="products.html">Back to catalogue</a>
+          </div>
+        </div>
 
-            <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.25rem;">
-              <a class="btn primary" href="checkout.html">Go to checkout</a>
-              <a class="btn" href="index.html#templates">Back to templates</a>
+        <div class="stack">
+          <div class="card">
+            <h3 style="margin:0 0 .75rem;">Quick specs</h3>
+            <div class="specs" aria-label="Product specifications">
+              <div class="row"><span>Genre</span><span>Horror / Mystery</span></div>
+              <div class="row"><span>Product Format</span><span>Web page (HTML) OR External PDF</span></div>
+              <div class="row"><span>Length</span><span>~15-20 min read per chapter</span></div>
+              <div class="row"><span>Price</span><span>Pay what you want</span></div>
+              <div class="row"><span>Platform</span><span>Desktop + Mobile</span></div>
             </div>
           </div>
-        </aside>
 
-        <div class="card" aria-label="Products">
-          <h3 class="kicker" style="margin:0 0 .75rem; font-family:var(--font-head); color:var(--text-muted);">Projects</h3>
+          <div class="card">
+            <h3 style="margin:0 0 .75rem;">What’s included</h3>
+            <ul style="margin:0; padding-left: 1.25rem;">
+              <li>Key to the main story page to either view online or download for offline viewing</li>
+              <li>Optional hidden commentary in the code...</li>
+              <li>Full-colour art for each chapter release</li>
+            </ul>
+          </div>
 
-          <div class="grid three" aria-label="Project listing grid">
-              <article class="project">
-                  <img src="img/project-blacksite.jpeg" alt="Blacksite Web Story key art">
-                  <h5>Blacksite Web Story</h5>
-                  <div class="meta-row"><span>Type: Web Story</span><span>Price: Pay what you want</span></div>
-                  <p style="margin:0;"><a class="inline" href="product-detail.html">View details</a></p>
-              </article>
+          <div class="card">
+            <h3 style="margin:0 0 .75rem;">Feedback</h3>
+            <p class="sub" style="margin:0 0 1rem;">Ideas? Comments? Inquiries? Let us know here!</p>
+            <form>
+              <label for="rating">Rating</label>
+              <select id="rating" name="rating">
+                <option>5 — Big Fan!</option>
+                <option>4 — Great</option>
+                <option>3 — Okay</option>
+                <option>2 — Needs work</option>
+                <option>1 — Not for me</option>
+              </select>
 
-              <article class="project">
-                  <img src="img/project-creative-freedom.jpeg" alt="Creative Freedom key art">
-                  <h5>Creative Freedom</h5>
-                  <div class="meta-row"><span>Type: Game</span><span>Price: $19.99 (pre‑order)</span></div>
-                  <p style="margin:0;"><a class="inline" href="product-detail.html">View details</a></p>
-              </article>
+              <div style="height:.75rem;"></div>
 
-              <article class="project">
-                  <img src="img/project-world-to-fantasy.jpeg" alt="World to Fantasy Web Story key art">
-                  <h5>World to Fantasy Web Story</h5>
-                  <div class="meta-row"><span>Type: Web Story</span><span>Price: Pay what you want</span></div>
-                  <p style="margin:0;"><a class="inline" href="product-detail.html">View details</a></p>
-              </article>
+              <label for="comment">Comment</label>
+              <textarea id="comment" name="comment" rows="4" placeholder="What worked? What didn’t?"></textarea>
 
-              <article class="project">
-                  <img src="img/artbook-creative-freedom.jpg" alt="Creative Freedom key art (alternate)">
-                  <h5>Creative Freedom — OST</h5>
-                  <div class="meta-row"><span>Type: Digital Soundtrack</span><span>Price: $7.99</span></div>
-                  <p style="margin:0;"><a class="inline" href="product-detail.html">View details</a></p>
-              </article>
+              <div style="height:1rem;"></div>
 
-              <article class="project">
-                  <img src="img/artbook-blacksite.jpg" alt="Blacksite Web Story key art (alternate)">
-                  <h5>Blacksite — Chapter Pack</h5>
-                  <div class="meta-row"><span>Type: Bundle</span><span>Price: $9.99</span></div>
-                  <p style="margin:0;"><a class="inline" href="product-detail.html">View details</a></p>
-              </article>
-
-              <article class="project">
-                  <img src="img/artbook-world-to-fantasy.jpg" alt="World to Fantasy Web Story key art (alternate)">
-                  <h5>World to Fantasy — Artbook</h5>
-                  <div class="meta-row"><span>Type: PDF</span><span>Price: $4.99</span></div>
-                  <p style="margin:0;"><a class="inline" href="product-detail.html">View details</a></p>
-              </article>
-
-              <article class="project">
-                  <img src="img/project-my-ultimate-heist.png" alt="My Ultimate Heist Webcomic (alternate)">
-                  <h5>My Ultimate Heist Webcomic</h5>
-                  <div class="meta-row"><span>Type: PDF/Online Viewing</span><span>Price: $4.99</span></div>
-                  <p style="margin:0;"><a class="inline" href="product-detail.html">View details</a></p>
-              </article>
+              <button class="btn primary" type="submit">Submit feedback</button>
+            </form>
           </div>
         </div>
       </div>
     </section>
 
-    <footer id="references">
-      <p style="margin:0 0 .5rem; font-family:var(--font-head); font-weight:800;">References & citations</p>
-
-      <p class="help" style="margin:.25rem 0 1rem;">
-        Original work: All project art was made by Junniel.
+    <footer class="foot">
+      <p style="margin:0;">
+        <a class="inline" href="index.html#references">References & citations</a>
+        <span style="color:var(--text-muted);">•</span>
+        Fonts loaded via Google Fonts (Inter / Roboto Mono). Artwork by Junniel.
       </p>
-
-      <p style="margin:0 0 .35rem; font-family:var(--font-head); font-weight:800;">Fonts</p>
-      <ul style="margin:.25rem 0 0; color:var(--text-muted);">
-        <li>Google Fonts. (n.d.). <em>Inter</em>. <a class="inline" href="https://fonts.google.com/specimen/Inter">https://fonts.google.com/specimen/Inter</a></li>
-        <li>Google Fonts. (n.d.). <em>Roboto Mono</em>. <a class="inline" href="https://fonts.google.com/specimen/Roboto+Mono">https://fonts.google.com/specimen/Roboto+Mono</a></li>
-      </ul>
     </footer>
   </div>
 </body>
