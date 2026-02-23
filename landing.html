@@ -2,15 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Colour Quest Studio — Products template</title>
+    <title>Colour Quest Studio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="img/mascot.png" />
 
-    <!-- heading font (falls back to system-ui if blocked) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;650;750&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
 
     <style>
         :root {
@@ -428,132 +426,169 @@
                 footer a:hover {
                     color: var(--accent-hover);
                 }
-    
-    /* Product detail specifics (kept minimal) */
-    .hero-img{
-      width:100%;
-      max-height: 420px;
-      object-fit: cover;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background:#0d0d0d;
-      display:block;
-    }
-    .specs{
-      display:grid;
-      gap:.6rem;
-    }
-    .specs .row{
-      display:flex;
-      justify-content: space-between;
-      gap:1rem;
-      padding:.55rem .75rem;
-      border:1px solid var(--line);
-      border-radius:12px;
-      background:#0d0d0d;
-      color: var(--text);
-    }
-    .specs .row span:first-child{ color: var(--text-muted); }
-
-  </style>
+    </style>
 </head>
 
 <body>
-  <nav class="toc" aria-label="Site navigation"><div class="inner">
-      <a href="index.html">Style guide</a>
-      <a href="landing.html">Landing Page</a>
-      <a href="about.html">About Page</a>
-      <a href="products.html">Products page</a>
-      <a href="product-detail.html" aria-current="page">Product detail</a>
-      <a href="checkout.html">Checkout page</a>
-    </div></nav>
+
+  <!-- Navigation -->
+  <nav class="toc" aria-label="Main navigation">
+    <div class="inner">
+        <a href="index.html">Style Guide</a>
+        <a href="landing.html" aria-current="page">Landing Page</a>
+        <a href="about.html">About Page</a>
+        <a href="products.html">Products Page</a>
+        <a href="product-detail.html">Product Detail</a>
+        <a href="checkout.html">Checkout</a>
+    </div>
+  </nav>
+
   <div class="wrap">
+
+    <!-- ================= -->
+    <!-- HERO SECTION      -->
+    <!-- ================= -->
     <header class="site">
-      <div class="kicker">Template page</div>
-      <h1>Product Detail</h1>
+      <div class="kicker">Independent Narrative Studio</div>
+      <h1>Colour Quest Studio</h1>
       <p class="sub">
-        Dedicated deep‑dive page for a single product or service. This example page can be a template for all the other projects, but P02 doesn't need us to do that. Good so I don't have to make even MORE art
+        Quiet games. Layered web stories. A connected universe built
+        through mystery, colour, and deliberate silence.
       </p>
+
+      <div style="margin-top:1.25rem; display:flex; gap:.75rem; flex-wrap:wrap;">
+        <a class="btn primary" href="products.html">Explore Projects</a>
+        <a class="btn" href="about.html">Learn More</a>
+      </div>
     </header>
 
+    <!-- ================= -->
+    <!-- FEATURED RELEASE  -->
+    <!-- ================= -->
     <section class="block">
+      <div class="section-title">
+        <h2>Featured Release</h2>
+        <p>Currently in mock pre-production.</p>
+      </div>
+
       <div class="grid two">
-        <div class="card">
-          <img class="hero-img" src="img/product-hero.jpg" alt="Product hero image (placeholder)">
-          <h2 style="margin:1rem 0 .25rem;">Blacksite Web Story</h2>
-          <p class="sub" style="margin:0 0 1rem;">A transcript-style web novel with optional hidden annotations for curious readers.</p>
-
-          <div class="meta-row" style="margin:0 0 1rem;">
-            <span>Type: Web novel</span>
-            <span>Release: Ongoing</span>
+        <article class="project card">
+          <img src="img/project-creative-freedom.jpeg" alt="Creative Freedom key art">
+          <h5>Creative Freedom</h5>
+          <div class="meta-row">
+            <span>Game</span>
+            <span>$19.99 (Pre-order)</span>
           </div>
-
-          <p style="margin:0 0 1rem;">
-            Gargoyle, designated Agent 14 is a crafty, mute operative, designated by her superior to increase rapport between her top-secret magical weapons facility and a foreign government. Her operation is thrown to the wayside when her
-              superior and The Blacksite itself are exposed and dismantled. Her quest to rescue her arrested boss has her resort to all sorts of foul play, and even finding out secrets of the land that are so much bigger than any other party.
+          <p class="sub" style="margin:0;">
+            A hungry little painter in a colourless world,
+            stalked by forces obsessed with realism.
           </p>
 
-          <div class="row" style="display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1rem;">
-            <a class="btn primary" href="checkout.html">Buy now</a>
-            <a class="btn" href="products.html">Back to catalogue</a>
-          </div>
-        </div>
+          <p style="margin:0;">
+            <a class="btn primary" href="checkout.html">Pre-Order</a>
+            <a class="btn" href="products.html" style="margin-left:.5rem;">Details</a>
+          </p>
+        </article>
 
-        <div class="stack">
-          <div class="card">
-            <h3 style="margin:0 0 .75rem;">Quick specs</h3>
-            <div class="specs" aria-label="Product specifications">
-              <div class="row"><span>Genre</span><span>Horror / Mystery</span></div>
-              <div class="row"><span>Product Format</span><span>Web page (HTML) OR External PDF</span></div>
-              <div class="row"><span>Length</span><span>~15-20 min read per chapter</span></div>
-              <div class="row"><span>Price</span><span>Pay what you want</span></div>
-              <div class="row"><span>Platform</span><span>Desktop + Mobile</span></div>
-            </div>
-          </div>
+        <div class="card">
+          <h4 style="margin:0 0 .75rem;">Studio Log</h4>
+          <p class="sub" style="margin:0 0 1rem;">
+            Jan 12 20XX — Prototype finalized<br>
+            Jan 19 20XX — Narrative revisions<br>
+            Jan 25 20XX — Art direction shift<br>
+            Feb 02 20XX — Soundtrack preview
+          </p>
 
-          <div class="card">
-            <h3 style="margin:0 0 .75rem;">What’s included</h3>
-            <ul style="margin:0; padding-left: 1.25rem;">
-              <li>Key to the main story page to either view online or download for offline viewing</li>
-              <li>Optional hidden commentary in the code...</li>
-              <li>Full-colour art for each chapter release</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3 style="margin:0 0 .75rem;">Feedback</h3>
-            <p class="sub" style="margin:0 0 1rem;">Ideas? Comments? Inquiries? Let us know here!</p>
-            <form>
-              <label for="rating">Rating</label>
-              <select id="rating" name="rating">
-                <option>5 — Big Fan!</option>
-                <option>4 — Great</option>
-                <option>3 — Okay</option>
-                <option>2 — Needs work</option>
-                <option>1 — Not for me</option>
-              </select>
-
-              <div style="height:.75rem;"></div>
-
-              <label for="comment">Comment</label>
-              <textarea id="comment" name="comment" rows="4" placeholder="What worked? What didn’t?"></textarea>
-
-              <div style="height:1rem;"></div>
-
-              <button class="btn primary" type="submit">Submit feedback</button>
-            </form>
-          </div>
+          <p style="margin:0;">
+            <a class="inline" href="about.html">Read about the studio</a>
+          </p>
         </div>
       </div>
     </section>
 
-    <footer class="foot">
+    <!-- ================= -->
+    <!-- PROJECT PREVIEW   -->
+    <!-- ================= -->
+    <section class="block">
+      <div class="section-title">
+        <h2>Projects</h2>
+        <p>Games and web stories within the same universe.</p>
+      </div>
+
+      <div class="grid three">
+
+        <article class="project">
+          <img src="img/project-blacksite.jpeg" alt="Blacksite Web Story key art">
+          <h5>Blacksite Web Story</h5>
+          <div class="meta-row">
+            <span>Web Story</span>
+            <span>Pay what you want</span>
+          </div>
+          <p style="margin:0;">
+            <a class="inline" href="products.html">View</a>
+          </p>
+        </article>
+
+        <article class="project">
+          <img src="img/project-creative-freedom.jpeg" alt="Creative Freedom key art">
+          <h5>Creative Freedom</h5>
+          <div class="meta-row">
+            <span>Game</span>
+            <span>$19.99</span>
+          </div>
+          <p style="margin:0;">
+            <a class="inline" href="products.html">View</a>
+          </p>
+        </article>
+
+        <article class="project">
+          <img src="img/project-world-to-fantasy.jpeg" alt="World to Fantasy Web Story key art">
+          <h5>World to Fantasy</h5>
+          <div class="meta-row">
+            <span>Web Story</span>
+            <span>Pay what you want</span>
+          </div>
+          <p style="margin:0;">
+            <a class="inline" href="products.html">View</a>
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ================= -->
+    <!-- NEWSLETTER        -->
+    <!-- ================= -->
+    <section class="block">
+      <div class="section-title">
+        <h2>Stay Updated</h2>
+        <p>Release notifications and archive updates.</p>
+      </div>
+
+      <div class="card">
+        <form action="#" method="post">
+          <label for="newsletter-email">Email</label>
+          <input id="newsletter-email" type="text" placeholder="name@example.com">
+
+          <p style="margin:1rem 0 0;">
+            <button class="btn primary" type="submit">Subscribe</button>
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p style="margin:0 0 .5rem;">
+        © 20XX Colour Quest Studio
+      </p>
       <p style="margin:0;">
-        <a class="inline" href="index.html#references">References & citations</a>
-        <span style="color:var(--text-muted);">•</span>
-        Fonts loaded via Google Fonts (Inter / Roboto Mono). Artwork by Junniel.
+        <a class="inline" href="about.html">About</a> —
+        <a class="inline" href="products.html">Projects</a> —
+        <a class="inline" href="checkout.html">Pre-Order</a>
       </p>
     </footer>
+
   </div>
 </body>
 </html>

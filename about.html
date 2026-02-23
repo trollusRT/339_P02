@@ -2,15 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Colour Quest Studio — Products template</title>
+    <title>About — Colour Quest Studio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="img/mascot.png" />
 
-    <!-- heading font (falls back to system-ui if blocked) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;650;750&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
 
     <style>
         :root {
@@ -428,132 +426,157 @@
                 footer a:hover {
                     color: var(--accent-hover);
                 }
-    
-    /* Product detail specifics (kept minimal) */
-    .hero-img{
-      width:100%;
-      max-height: 420px;
-      object-fit: cover;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background:#0d0d0d;
-      display:block;
-    }
-    .specs{
-      display:grid;
-      gap:.6rem;
-    }
-    .specs .row{
-      display:flex;
-      justify-content: space-between;
-      gap:1rem;
-      padding:.55rem .75rem;
-      border:1px solid var(--line);
-      border-radius:12px;
-      background:#0d0d0d;
-      color: var(--text);
-    }
-    .specs .row span:first-child{ color: var(--text-muted); }
-
-  </style>
+    </style>
 </head>
 
 <body>
-  <nav class="toc" aria-label="Site navigation"><div class="inner">
-      <a href="index.html">Style guide</a>
+
+  <!-- Navigation -->
+  <nav class="toc" aria-label="Main navigation">
+    <div class="inner">
+      <a href="index.html">Style Guide</a>
       <a href="landing.html">Landing Page</a>
-      <a href="about.html">About Page</a>
-      <a href="products.html">Products page</a>
-      <a href="product-detail.html" aria-current="page">Product detail</a>
-      <a href="checkout.html">Checkout page</a>
-    </div></nav>
+      <a href="about.html" aria-current="page">About Page</a>
+      <a href="products.html">Products Page</a>
+      <a href="product-detail.html">Product Detail</a>
+      <a href="checkout.html">Checkout</a>
+    </div>
+  </nav>
+
   <div class="wrap">
+
+    <!-- Header -->
     <header class="site">
-      <div class="kicker">Template page</div>
-      <h1>Product Detail</h1>
+      <div class="kicker">About the Studio</div>
+      <h1>Colour Quest Studio</h1>
       <p class="sub">
-        Dedicated deep‑dive page for a single product or service. This example page can be a template for all the other projects, but P02 doesn't need us to do that. Good so I don't have to make even MORE art
+        A small narrative-first indie studio focused on mystery-driven games,
+        web stories, and long-form interconnected lore.
       </p>
     </header>
 
+    <!-- ================= -->
+    <!-- Studio Overview   -->
+    <!-- ================= -->
     <section class="block">
+      <div class="section-title">
+        <h2>Overview</h2>
+        <p>What the studio is and why it exists.</p>
+      </div>
+
+      <div class="card">
+        <p class="sub" style="margin:0 0 1rem;">
+          Colour Quest Studio is built around long-form storytelling across
+          games, web experiences, and experimental digital formats. Each
+          release contributes to a shared universe where themes of colour,
+          perception, artificial realism, and hidden entities unfold slowly
+          over time.
+        </p>
+
+        <p class="sub" style="margin:0;">
+          The goal is not just to release standalone projects, but to create
+          an archive — something players can return to, analyze, and discuss.
+          Mystery is intentional. Silence is intentional. Every detail exists
+          for a reason.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= -->
+    <!-- The Creator       -->
+    <!-- ================= -->
+    <section class="block">
+      <div class="section-title">
+        <h2>The Creator</h2>
+        <p>The person behind the work.</p>
+      </div>
+
       <div class="grid two">
         <div class="card">
-          <img class="hero-img" src="img/product-hero.jpg" alt="Product hero image (placeholder)">
-          <h2 style="margin:1rem 0 .25rem;">Blacksite Web Story</h2>
-          <p class="sub" style="margin:0 0 1rem;">A transcript-style web novel with optional hidden annotations for curious readers.</p>
+          <h3 style="margin:0 0 .75rem;">Independent Developer</h3>
 
-          <div class="meta-row" style="margin:0 0 1rem;">
-            <span>Type: Web novel</span>
-            <span>Release: Ongoing</span>
-          </div>
-
-          <p style="margin:0 0 1rem;">
-            Gargoyle, designated Agent 14 is a crafty, mute operative, designated by her superior to increase rapport between her top-secret magical weapons facility and a foreign government. Her operation is thrown to the wayside when her
-              superior and The Blacksite itself are exposed and dismantled. Her quest to rescue her arrested boss has her resort to all sorts of foul play, and even finding out secrets of the land that are so much bigger than any other party.
+          <p class="sub" style="margin:0 0 1rem;">
+            Colour Quest Studio currently operates as a small independent
+            developer model — a single artist/programmer/writer hybrid.
+            Projects are designed, illustrated, and structured in-house.
           </p>
 
-          <div class="row" style="display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1rem;">
-            <a class="btn primary" href="checkout.html">Buy now</a>
-            <a class="btn" href="products.html">Back to catalogue</a>
-          </div>
+          <p class="sub" style="margin:0;">
+            Inspiration comes from internet-era storytelling, ARG design,
+            retro web aesthetics, and narrative-heavy indie games.
+          </p>
         </div>
 
-        <div class="stack">
-          <div class="card">
-            <h3 style="margin:0 0 .75rem;">Quick specs</h3>
-            <div class="specs" aria-label="Product specifications">
-              <div class="row"><span>Genre</span><span>Horror / Mystery</span></div>
-              <div class="row"><span>Product Format</span><span>Web page (HTML) OR External PDF</span></div>
-              <div class="row"><span>Length</span><span>~15-20 min read per chapter</span></div>
-              <div class="row"><span>Price</span><span>Pay what you want</span></div>
-              <div class="row"><span>Platform</span><span>Desktop + Mobile</span></div>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3 style="margin:0 0 .75rem;">What’s included</h3>
-            <ul style="margin:0; padding-left: 1.25rem;">
-              <li>Key to the main story page to either view online or download for offline viewing</li>
-              <li>Optional hidden commentary in the code...</li>
-              <li>Full-colour art for each chapter release</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3 style="margin:0 0 .75rem;">Feedback</h3>
-            <p class="sub" style="margin:0 0 1rem;">Ideas? Comments? Inquiries? Let us know here!</p>
-            <form>
-              <label for="rating">Rating</label>
-              <select id="rating" name="rating">
-                <option>5 — Big Fan!</option>
-                <option>4 — Great</option>
-                <option>3 — Okay</option>
-                <option>2 — Needs work</option>
-                <option>1 — Not for me</option>
-              </select>
-
-              <div style="height:.75rem;"></div>
-
-              <label for="comment">Comment</label>
-              <textarea id="comment" name="comment" rows="4" placeholder="What worked? What didn’t?"></textarea>
-
-              <div style="height:1rem;"></div>
-
-              <button class="btn primary" type="submit">Submit feedback</button>
-            </form>
-          </div>
+        <div class="card">
+          <img src="img/mascot.png"
+               alt="Studio mascot illustration"
+               style="width:100%; height:auto; border-radius:12px; border:1px solid var(--line-subtle);">
         </div>
       </div>
     </section>
 
-    <footer class="foot">
+    <!-- ================= -->
+    <!-- Philosophy        -->
+    <!-- ================= -->
+    <section class="block">
+      <div class="section-title">
+        <h2>Creative Philosophy</h2>
+        <p>How projects are approached.</p>
+      </div>
+
+      <div class="card">
+        <ul style="margin:0; color:var(--text-muted); line-height:1.6;">
+          <li>Story comes before mechanics.</li>
+          <li>Atmosphere matters more than spectacle.</li>
+          <li>Minimal UI keeps focus on narrative.</li>
+          <li>Community interpretation is part of the design.</li>
+          <li>Silence and ambiguity are tools — not mistakes.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= -->
+    <!-- Timeline          -->
+    <!-- ================= -->
+    <section class="block">
+      <div class="section-title">
+        <h2>Studio Timeline</h2>
+        <p>Key development moments.</p>
+      </div>
+
+      <div class="card">
+        <p class="sub" style="margin:0 0 1rem;">
+          <strong style="font-family:var(--font-head);">20XX</strong> — Studio concept created.<br>
+          <strong style="font-family:var(--font-head);">20XX</strong> — First web story prototype released.<br>
+          <strong style="font-family:var(--font-head);">20XX</strong> — Creative Freedom enters mock pre-production.<br>
+          <strong style="font-family:var(--font-head);">20XX</strong> — Community archive opens.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= -->
+    <!-- Call to Action    -->
+    <!-- ================= -->
+    <section class="block">
+      <div class="section-title">
+        <h2>Support the Studio</h2>
+        <p>Follow ongoing releases and future updates.</p>
+      </div>
+
+      <div class="card" style="display:flex; gap:1rem; flex-wrap:wrap;">
+        <a class="btn primary" href="products.html">View Projects</a>
+        <a class="btn" href="checkout.html">Pre-Order</a>
+        <a class="btn" href="index.html#brand">Read Brand Notes</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
       <p style="margin:0;">
-        <a class="inline" href="index.html#references">References & citations</a>
-        <span style="color:var(--text-muted);">•</span>
-        Fonts loaded via Google Fonts (Inter / Roboto Mono). Artwork by Junniel.
+        © 20XX Colour Quest Studio — Independent Narrative Development
       </p>
     </footer>
+
   </div>
 </body>
 </html>
